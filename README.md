@@ -14,27 +14,34 @@ A PHP-based portfolio website builder with AI-powered content generation using x
 ## Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/yourusername/mywebsite.git
    cd mywebsite
    ```
 
 2. **Set up environment variables**
+
    ```bash
    cp .env.example .env
    ```
+
    Edit `.env` and add your xAI API key:
+
    ```
    XAI_API_KEY=your-actual-xai-api-key-here
    ```
 
 3. **Configure the application**
+
    ```bash
    cp config.example.php config.php
    ```
+
    Edit `config.php` if needed (environment variables are loaded automatically).
 
 4. **Set up the database**
+
    ```bash
    # Create the SQLite database
    php init.php
