@@ -1,0 +1,50 @@
+# MyWebsite - Apache Configuration
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Set base path (adjust if needed)
+RewriteBase /mywebsite/
+
+# Serve static files directly
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Serve directories with index.php
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Allow access to storage/uploads for images
+RewriteRule ^storage/uploads/(.*)$ storage/uploads/$1 [L]
+
+# Route everything else to index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Prevent access to sensitive files
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(sql|sqlite|env|json|md)$">
+    Require all denied
+</FilesMatch>
+
+# Allow access to assets
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|ico|svg|woff|woff2)$">
+    Require all granted
+</FilesMatch>
+
+# PHP settings (if allowed)
+<IfModule mod_php.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 12M
+    php_value max_execution_time 60
+</IfModule>
+

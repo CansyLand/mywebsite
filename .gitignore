@@ -1,0 +1,47 @@
+# MyWebsite - Git Ignore
+
+# Configuration
+config.php
+
+# Database
+/database/*.sqlite
+/database/*.db
+
+# Uploads
+/storage/uploads/*
+!/storage/uploads/.gitkeep
+
+# Environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+/logs/
+
+# Temporary files
+/tmp/
+/temp/
+/cache/
+
+# Composer (if used later)
+/vendor/
+composer.lock
+
+# Node (if used later)
+/node_modules/
+package-lock.json
+
