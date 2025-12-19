@@ -112,7 +112,10 @@ body {
    ═══════════════════════════════════════════════════════════ */
 
 .hero {
-    background: linear-gradient(135deg, var(--primary) 0%, #0f766e 50%, #115e59 100%);
+    background: linear-gradient(rgba(13, 148, 136, 0.6), rgba(13, 148, 136, 0.6)), url('../images/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     padding: 6rem 2rem;
     text-align: center;
@@ -139,6 +142,7 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.15;
+    color: white !important;
 }
 
 .hero p {
@@ -146,20 +150,22 @@ body {
     opacity: 0.9;
     margin-bottom: 2rem;
     line-height: 1.7;
+    color: white !important;
 }
 
 .btn-cta {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     color: var(--primary);
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: 600;
     border-radius: 100px;
     text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .btn-cta:hover {
