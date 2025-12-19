@@ -64,6 +64,7 @@ A PHP-based portfolio website builder with AI-powered content generation using x
    ```
 
    This will only upload changed files since the last deployment.
+   Production URL: https://parutkin.com/mywebsite/
 
 ## Requirements
 
