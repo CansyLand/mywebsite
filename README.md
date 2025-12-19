@@ -52,6 +52,16 @@ A PHP-based portfolio website builder with AI-powered content generation using x
    - Make sure `storage/uploads/` is writable
    - For Apache, the included `.htaccess` handles URL rewriting
 
+6. **Deploy to production (FTP)**
+   ```bash
+   # Initial setup (already done)
+   git ftp init
+
+   # For future deployments, simply run:
+   git ftp push
+   ```
+   This will only upload changed files since the last deployment.
+
 ## Requirements
 
 - PHP 8.0 or higher
